@@ -1,6 +1,6 @@
 {
   "packages": [
-    "packages/*"
+    "packages/@ant-design-vue-pro/*"
   ],
   "version": "independent"
 }
