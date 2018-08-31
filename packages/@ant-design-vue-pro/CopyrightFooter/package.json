@@ -1,0 +1,17 @@
+{
+  "name": "copyright-footer",
+  "version": "0.0.2",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "publishConfig": {
+    "access": "public",
+    "registry": "http://registry.npmjs.com"
+  },
+  "keywords": [
+    "vue",
+    "ant-design-vue"
+  ],
+  "author": "limichange <limichange@hotmail.com>",
+  "license": "MIT"
+}
