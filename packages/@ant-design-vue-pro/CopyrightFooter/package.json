@@ -6,7 +6,7 @@
   "scripts": {},
   "publishConfig": {
     "access": "public",
-    "registry": "http://registry.npmjs.com"
+    "registry": "https://registry.npmjs.com"
   },
   "keywords": [
     "vue",
@@ -14,5 +14,5 @@
   ],
   "author": "limichange <limichange@hotmail.com>",
   "license": "MIT",
-  "gitHead": "07e9a0feb0403109c4ede21cee21ad4b5b8785a8"
+  "gitHead": "5608a278deab144dae82db79443667f9165415b8"
 }
