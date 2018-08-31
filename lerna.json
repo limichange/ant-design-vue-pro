@@ -2,5 +2,11 @@
   "packages": [
     "packages/@ant-design-vue-pro/*"
   ],
+  "command": {
+    "publish": {
+      "message": "chore(release): publish"
+    }
+  },
+  "npmClient": "npm",
   "version": "independent"
 }
