@@ -13,5 +13,6 @@
     "ant-design-vue"
   ],
   "author": "limichange <limichange@hotmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "gitHead": "07e9a0feb0403109c4ede21cee21ad4b5b8785a8"
 }

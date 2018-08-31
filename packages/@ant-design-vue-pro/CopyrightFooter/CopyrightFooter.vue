@@ -9,8 +9,7 @@ export default {
   name: 'CopyrightFooter',
   data () {
     return {}
-  },
-  methods: {}
+  }
 }
 </script>
 
