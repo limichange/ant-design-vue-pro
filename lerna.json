@@ -1,6 +1,6 @@
 {
   "packages": [
-    "packages/@ant-design-vue-pro/*"
+    "packages/*"
   ],
   "command": {
     "publish": {
