@@ -21,5 +21,8 @@
     "url": "https://github.com/limichange/ant-design-vue-pro/issues"
   },
   "homepage": "https://github.com/limichange/ant-design-vue-pro#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "ant-design-vue": "^1.0.3"
+  }
 }

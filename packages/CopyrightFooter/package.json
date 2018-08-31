@@ -14,5 +14,8 @@
   ],
   "author": "limichange <limichange@hotmail.com>",
   "license": "MIT",
-  "gitHead": "9b7239ee169a24a59dc7873bf0f020309a774960"
+  "gitHead": "9b7239ee169a24a59dc7873bf0f020309a774960",
+  "dependencies": {
+    "ant-design-vue": "^1.0.3"
+  }
 }
