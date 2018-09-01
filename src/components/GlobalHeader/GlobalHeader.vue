@@ -18,9 +18,6 @@
         </div>
         <a-menu slot="overlay">
           <a-menu-item>
-            <ChangePassword />
-          </a-menu-item>
-          <a-menu-item>
             <span @click="logout">退出登录</span>
           </a-menu-item>
         </a-menu>
@@ -32,9 +29,14 @@
 <script>
 export default {
   name: 'GlobalHeader',
+  props: {
+    collapsed: {
+      type: Boolean,
+      default: false
+    }
+  },
   data () {
     return {
-      collapsed: false,
       userInfo: {
         userName: '用户名称'
       }
@@ -42,7 +44,13 @@ export default {
   },
   methods: {
     toggleSideBar () {
+      const { collapsed } = this
+
+      this.$emit('collapse', !collapsed)
+
+      this.triggerResizeEvent()
     },
+    triggerResizeEvent () {},
     logout () {
     }
   }
