@@ -6,7 +6,11 @@ Vue.use(Router)
 export default new Router({
   routes: [{
     path: '/',
-    name: 'CopyrightFooter',
-    component: () => import('./views/CopyrightFooter')
+    name: 'Copyright',
+    component: () => import('./views/Copyright')
+  }, {
+    path: '/GlobalHeader',
+    name: 'GlobalHeader',
+    component: () => import('./views/GlobalHeader')
   }]
 })
