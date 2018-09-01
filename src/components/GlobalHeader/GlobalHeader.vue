@@ -44,10 +44,7 @@ export default {
   },
   methods: {
     toggleSideBar () {
-      const { collapsed } = this
-
-      this.$emit('collapse', !collapsed)
-
+      this.$emit('collapse', !this.collapsed)
       this.triggerResizeEvent()
     },
     triggerResizeEvent () {},
