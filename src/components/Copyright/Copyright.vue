@@ -1,5 +1,5 @@
 <template>
-  <div :class="$style.CopyrightFooter">
+  <div :class="$style.Copyright">
     {{ companyName }}
     <i class="anticon anticon-copyright" />
     {{ new Date().getFullYear() }}
@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: 'CopyrightFooter',
+  name: 'Copyright',
   props: {
     companyName: {
       type: String,
@@ -26,7 +26,7 @@ export default {
 <style lang="less" module>
 @import "~ant-design-vue/lib/style/themes/default.less";
 
-.CopyrightFooter {
+.Copyright {
   padding: 0 16px;
   margin: 48px 0 24px 0;
   text-align: center;
