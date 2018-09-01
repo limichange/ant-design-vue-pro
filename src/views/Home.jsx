@@ -1,8 +1,15 @@
+import CopyrightFooter from '../components/CopyrightFooter'
+
 export default {
   name: 'Home',
   render () {
     return (
-      <div>Home</div>
+      <div>
+        <div>Home</div>
+        <CopyrightFooter
+          companyName="companyName"
+          productName="productName" />
+      </div>
     )
   }
 }
