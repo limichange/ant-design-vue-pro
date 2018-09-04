@@ -13,11 +13,9 @@ export default {
   },
   render () {
     return (
-      <div>
-        <GlobalHeader
-          collapsed={this.collapsed}
-          onCollapse={this.onCollapse} />
-      </div>
+      <GlobalHeader
+        collapsed={this.collapsed}
+        onCollapse={this.onCollapse} />
     )
   }
 }

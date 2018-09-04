@@ -79,7 +79,7 @@ export default {
   text-align: center;
   width: 64px;
   height: 64px;
-  line-height: 64px;
+  line-height: 64px !important;
 
   &:hover {
     background: @primary-1;
