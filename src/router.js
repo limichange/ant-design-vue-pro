@@ -6,11 +6,7 @@ Vue.use(Router)
 export default new Router({
   routes: [{
     path: '/',
-    name: 'Copyright',
-    component: () => import('./views/Copyright')
-  }, {
-    path: '/GlobalHeader',
-    name: 'GlobalHeader',
-    component: () => import('./views/GlobalHeader')
+    name: 'Index',
+    component: () => import('./views/index')
   }]
 })
