@@ -1,7 +1,6 @@
 {
   "name": "ant-design-vue-pro",
   "version": "0.0.1",
-  "private": true,
   "scripts": {
     "publish": "lerna publish",
     "serve": "vue-cli-service serve",
