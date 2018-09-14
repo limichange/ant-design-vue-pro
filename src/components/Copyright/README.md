@@ -1,3 +1,0 @@
-## CopyrightFooter
-
-footer with copyright
