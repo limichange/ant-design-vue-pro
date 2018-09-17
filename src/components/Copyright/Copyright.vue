@@ -1,15 +1,11 @@
 <script>
+import VueTypes from 'vue-types'
+
 export default {
   name: 'Copyright',
   props: {
-    companyName: {
-      type: String,
-      default: ''
-    },
-    productName: {
-      type: String,
-      default: ''
-    }
+    companyName: VueTypes.string.def(''),
+    productName: VueTypes.string.def('')
   },
   render () {
     return (
