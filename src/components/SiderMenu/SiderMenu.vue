@@ -6,10 +6,8 @@
     class="sider"
     collapsible>
     <div class="logo">
-      <img
-        src=""
-        alt="logo">
-      <h1>标记系统</h1>
+      <img :src="logoSrc" alt="logo">
+      <h1>{{ title }}</h1>
     </div>
     <a-menu
       :selected-keys="selectedKeys"
