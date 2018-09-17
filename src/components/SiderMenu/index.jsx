@@ -34,6 +34,10 @@ export default {
       this.$router.push({ name: item.key })
     },
     createMenuItems () {
+      this.routes.map(route => {
+        console.log(route)
+      })
+
       return <a-menu-item>name2</a-menu-item>
     }
   },
@@ -42,7 +46,7 @@ export default {
 
     return (
       <a-layout-sider
-        trigger="null"
+        trigger={null}
         width={this.width}
         v-model={this.collapsed}
         class="sider"
