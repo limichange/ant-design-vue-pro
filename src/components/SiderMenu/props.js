@@ -1,10 +1,9 @@
+import VueTypes from 'vue-types'
+
 export default {
   width: {
     type: Number,
     default: 200
   },
-  logo: {
-    type: String,
-    default: ''
-  }
+  logo: VueTypes.string.def('')
 }
