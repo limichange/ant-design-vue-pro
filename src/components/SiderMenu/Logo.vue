@@ -4,7 +4,7 @@ export default {
   render () {
     <div class={this.$style.Logo}>
       <img
-        // v-if="logoSrc"
+        v-if={this.logoSrc}
         src={this.logoSrc}
         alt="logo" />
       <h1>{this.title}</h1>

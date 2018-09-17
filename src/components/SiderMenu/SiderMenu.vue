@@ -85,7 +85,7 @@ export default {
         collapsible>
         <Logo {...this.logo} />
         <a-menu
-          selectedKeys={this.selectedKeys}
+          // selectedKeys={this.selectedKeys}
           theme="dark"
           mode="inline"
           onClick={this.select}>
