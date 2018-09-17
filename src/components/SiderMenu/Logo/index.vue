@@ -7,7 +7,7 @@ export default {
   render () {
     return (
       <div class={this.$style.Logo}>
-        {this.logoSrc && <img src={this.logoSrc} alt="logo" />}
+        {this.src && <img src={this.src} alt="logo" />}
         <h1>{this.title}</h1>
       </div>
     )
