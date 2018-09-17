@@ -41,6 +41,7 @@
 <script>
 import { mapState } from 'vuex'
 import props from './props'
+import Logo from './Logo'
 
 export default {
   name: 'SiderMenu',
@@ -82,13 +83,7 @@ export default {
         v-model={this.collapsed}
         class="sider"
         collapsible>
-        <div class="logo">
-          <img
-            // v-if="logoSrc"
-            src={this.logoSrc}
-            alt="logo" />
-          <h1>{this.title}</h1>
-        </div>
+        <Logo {...this.logo} />
         <a-menu
           selectedKeys={this.selectedKeys}
           theme="dark"
@@ -105,33 +100,6 @@ export default {
 <style lang="less" scoped>
 @ease-in-out: cubic-bezier(0.645, 0.045, 0.355, 1);
 @ease-in-out-circ: cubic-bezier(0.78, 0.14, 0.15, 0.86);
-@menu-collapsed-width: 80px;
-
-.logo {
-  height: 64px;
-  position: relative;
-  line-height: 64px;
-  padding-left: (@menu-collapsed-width - 32px) / 2;
-  transition: all 0.3s;
-  background: #002140;
-  overflow: hidden;
-
-  img {
-    display: inline-block;
-    vertical-align: middle;
-    height: 32px;
-  }
-
-  h1 {
-    color: white;
-    display: inline-block;
-    vertical-align: middle;
-    font-size: 20px;
-    margin: 0 0 0 12px;
-    font-family: 'Myriad Pro', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-    font-weight: 600;
-  }
-}
 
 .sider {
   min-height: 100vh;
