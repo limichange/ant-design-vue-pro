@@ -1,12 +1,3 @@
-<template>
-  <div :class="$style.Copyright">
-    {{ companyName }}
-    <i class="anticon anticon-copyright" />
-    {{ new Date().getFullYear() }}
-    版权所有 {{ productName }}
-  </div>
-</template>
-
 <script>
 export default {
   name: 'Copyright',
@@ -19,6 +10,17 @@ export default {
       type: String,
       default: ''
     }
+  },
+  render () {
+    return (
+      <div class={this.$style.Copyright}>
+        { companyName }
+        <i class="anticon anticon-copyright" />
+        { new Date().getFullYear() }
+        版权所有
+        { productName }
+      </div>
+    )
   }
 }
 </script>
