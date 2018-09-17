@@ -1,28 +1,12 @@
+<!--
 <template>
-  <a-layout-sider
-    :trigger="null"
-    :width="width"
-    v-model="collapsed"
-    class="sider"
-    collapsible>
-    <div class="logo">
-      <img
-        v-if="logoSrc"
-        :src="logoSrc"
-        alt="logo" />
-      <h1>{{ title }}</h1>
-    </div>
-    <a-menu
-      :selected-keys="selectedKeys"
-      theme="dark"
-      mode="inline"
-      @click="select">
+
 
       <template
         v-for="route in routes"
         v-if="!route.hidden">
 
-        <!-- <a-menu-item
+        <a-menu-item
           :key="route.children[0].name"
           v-if="route.onePage">
           <a-icon :type="route.children[0].meta.icon" />
@@ -49,12 +33,11 @@
             :key="routeChildren.name">
             {{ routeChildren.meta.name }}
           </a-menu-item>
-        </a-sub-menu> -->
+        </a-sub-menu>
       </template>
-    </a-menu>
-  </a-layout-sider>
-</template>
 
+</template>
+-->
 <script>
 import { mapState } from 'vuex'
 import props from './props'
@@ -90,6 +73,31 @@ export default {
     select (item) {
       this.$router.push({ name: item.key })
     }
+  },
+  render () {
+    return (
+      <a-layout-sider
+        trigger="null"
+        width={this.width}
+        v-model={this.collapsed}
+        class="sider"
+        collapsible>
+        <div class="logo">
+          <img
+            // v-if="logoSrc"
+            src={this.logoSrc}
+            alt="logo" />
+          <h1>{this.title}</h1>
+        </div>
+        <a-menu
+          selectedKeys={this.selectedKeys}
+          theme="dark"
+          mode="inline"
+          onClick={this.select}>
+          <a-menu-item>name</a-menu-item>
+        </a-menu>
+      </a-layout-sider>
+    )
   }
 }
 </script>
