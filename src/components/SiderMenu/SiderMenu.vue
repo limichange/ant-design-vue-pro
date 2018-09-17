@@ -81,7 +81,9 @@ export default {
         v-model={this.collapsed}
         class="sider"
         collapsible>
-        <Logo {...{ props: this.logo }} />
+        <Logo
+          title={this.logo.title}
+          src={this.logo.src} />
         <a-menu
           // selectedKeys={this.selectedKeys}
           theme="dark"
