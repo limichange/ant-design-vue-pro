@@ -5,11 +5,15 @@ export default {
   name: 'Logo',
   props,
   render () {
+    let logoImg
+
+    if (this.logoSrc) {
+      logoImg = <img src={this.logoSrc} alt="logo" />
+    }
+
     return (
       <div class={this.$style.Logo}>
-        <img
-          src={this.logoSrc}
-          alt="logo" />
+        {logoImg}
         <h1>{this.title}</h1>
       </div>
     )
