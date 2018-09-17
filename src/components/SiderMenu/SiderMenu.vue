@@ -22,7 +22,7 @@
         v-for="route in routes"
         v-if="!route.hidden">
 
-        <a-menu-item
+        <!-- <a-menu-item
           :key="route.children[0].name"
           v-if="route.onePage">
           <a-icon :type="route.children[0].meta.icon" />
@@ -49,7 +49,7 @@
             :key="routeChildren.name">
             {{ routeChildren.meta.name }}
           </a-menu-item>
-        </a-sub-menu>
+        </a-sub-menu> -->
       </template>
     </a-menu>
   </a-layout-sider>
