@@ -11,7 +11,9 @@ export default {
     return (
       <div class={this.$style.Copyright}>
         { this.companyName }
-        <i class="anticon anticon-copyright" />
+        <i
+          style="margin: 0 5px;"
+          class="anticon anticon-copyright" />
         { new Date().getFullYear() }
         版权所有
         { this.productName }
