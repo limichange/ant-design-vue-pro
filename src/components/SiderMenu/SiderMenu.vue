@@ -1,7 +1,5 @@
 <!--
 <template>
-
-
       <template
         v-for="route in routes"
         v-if="!route.hidden">
@@ -83,7 +81,7 @@ export default {
         v-model={this.collapsed}
         class="sider"
         collapsible>
-        <Logo {...this.logo} />
+        <Logo {...this.logo} title={this.logo.title}/>
         <a-menu
           // selectedKeys={this.selectedKeys}
           theme="dark"

@@ -1,14 +1,18 @@
 <script>
+import props from './props'
+
 export default {
   name: 'Logo',
+  props,
   render () {
-    <div class={this.$style.Logo}>
-      <img
-        v-if={this.logoSrc}
-        src={this.logoSrc}
-        alt="logo" />
-      <h1>{this.title}</h1>
-    </div>
+    return (
+      <div class={this.$style.Logo}>
+        <img
+          src={this.logoSrc}
+          alt="logo" />
+        <h1>{this.title}</h1>
+      </div>
+    )
   }
 }
 </script>
