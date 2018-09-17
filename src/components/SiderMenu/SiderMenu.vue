@@ -40,6 +40,7 @@
 import { mapState } from 'vuex'
 import props from './props'
 import Logo from './Logo'
+import p from '../../utils/props'
 
 export default {
   name: 'SiderMenu',
@@ -77,10 +78,6 @@ export default {
   render () {
     const menuItems = this.createMenuItems()
 
-    function props (props) {
-      return { props }
-    }
-
     return (
       <a-layout-sider
         trigger="null"
@@ -88,7 +85,7 @@ export default {
         v-model={this.collapsed}
         class="sider"
         collapsible>
-        <Logo {...props(this.logo)} />
+        <Logo {...p(this.logo)} />
         <a-menu
           // selectedKeys={this.selectedKeys}
           theme="dark"
