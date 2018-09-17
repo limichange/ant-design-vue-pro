@@ -6,7 +6,10 @@
     class="sider"
     collapsible>
     <div class="logo">
-      <img :src="logoSrc" alt="logo">
+      <img
+        v-if="logoSrc"
+        :src="logoSrc"
+        alt="logo" />
       <h1>{{ title }}</h1>
     </div>
     <a-menu
@@ -68,7 +71,7 @@ export default {
   computed: {
     ...mapState({
       user: state => state.user,
-      collapsed: state => state.app.sidebar.collapsed
+      collapsed: () => false
     })
   },
   watch: {
