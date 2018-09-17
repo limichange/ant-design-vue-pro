@@ -44,12 +44,10 @@ import Logo from './Logo'
 export default {
   name: 'SiderMenu',
   props,
-  data () {
-    return {
-      selectedKeys: [],
-      routes: []
-    }
-  },
+  data: () => ({
+    selectedKeys: [],
+    routes: []
+  }),
   computed: {
     ...mapState({
       user: state => state.user,
@@ -71,9 +69,18 @@ export default {
     },
     select (item) {
       this.$router.push({ name: item.key })
+    },
+    createMenuItems () {
+      return <a-menu-item>name2</a-menu-item>
     }
   },
   render () {
+    const menuItems = this.createMenuItems()
+
+    function props (props) {
+      return { props }
+    }
+
     return (
       <a-layout-sider
         trigger="null"
@@ -81,15 +88,13 @@ export default {
         v-model={this.collapsed}
         class="sider"
         collapsible>
-        <Logo
-          title={this.logo.title}
-          src={this.logo.src} />
+        <Logo {...props(this.logo)} />
         <a-menu
           // selectedKeys={this.selectedKeys}
           theme="dark"
           mode="inline"
           onClick={this.select}>
-          <a-menu-item>name</a-menu-item>
+          {menuItems}
         </a-menu>
       </a-layout-sider>
     )
