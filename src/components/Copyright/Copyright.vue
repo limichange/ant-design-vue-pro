@@ -14,11 +14,11 @@ export default {
   render () {
     return (
       <div class={this.$style.Copyright}>
-        { companyName }
+        { this.companyName }
         <i class="anticon anticon-copyright" />
         { new Date().getFullYear() }
         版权所有
-        { productName }
+        { this.productName }
       </div>
     )
   }
