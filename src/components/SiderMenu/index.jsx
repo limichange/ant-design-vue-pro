@@ -45,21 +45,25 @@ export default {
     createMenuItem (route) {
       return (
         <a-menu-item key={route.name}>
-          {route.meta.icon && <a-icon type={route.meta.icon} />}
-          <span>{route.meta.title}</span>
+          {this.createIcon(route)}
+          {route.meta.title}
         </a-menu-item>
       )
     },
+    createIcon (route) {
+      return route.meta.icon && <a-icon type={route.meta.icon} />
+    },
     createSubMenu (route) {
       const menuItems = route.children.map(this.createMenuItem)
+      const icon = this.createIcon(route)
 
       return (
         <a-sub-menu key={route.name}>
           <span slot="title">
-            {route.meta.icon && <a-icon type={route.meta.icon} />}
-            <span>{route.meta.title}</span>
+            {icon}
+            {route.meta.title}
           </span>
-          { menuItems}
+          {menuItems}
         </a-sub-menu>
       )
     }
