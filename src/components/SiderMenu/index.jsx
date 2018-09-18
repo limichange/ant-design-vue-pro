@@ -45,7 +45,7 @@ export default {
     createMenuItem (route) {
       return (
         <a-menu-item key={route.name}>
-          <a-icon type={route.meta.icon} />
+          {route.meta.icon && <a-icon type={route.meta.icon} />}
           <span>{route.meta.title}</span>
         </a-menu-item>
       )
@@ -56,7 +56,7 @@ export default {
       return (
         <a-sub-menu key={route.name}>
           <span slot="title">
-            <a-icon type={route.meta.icon} />
+            {route.meta.icon && <a-icon type={route.meta.icon} />}
             <span>{route.meta.title}</span>
           </span>
           { menuItems}
