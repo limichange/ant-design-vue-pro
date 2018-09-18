@@ -1,6 +1,6 @@
 {
   "name": "ant-design-vue-pro",
-  "version": "0.2.1",
+  "version": "0.2.3",
   "main": "src/components/index.js",
   "scripts": {
     "serve": "vue-cli-service serve",
