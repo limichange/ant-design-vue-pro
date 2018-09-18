@@ -1,4 +1,3 @@
-import { mapState } from 'vuex'
 import props from './props'
 import Logo from './Logo'
 import p from '../../utils/props'
@@ -12,10 +11,8 @@ export default {
     routes: []
   }),
   computed: {
-    ...mapState({
-      user: state => state.user,
-      collapsed: () => false
-    })
+    user: () => {},
+    collapsed: () => false
   },
   watch: {
     $route: {
