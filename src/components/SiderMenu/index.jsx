@@ -18,13 +18,13 @@ export default {
     })
   },
   watch: {
-    $route () {
-      this.updateDefaultKeys()
+    $route: {
+      handler: 'updateDefaultKeys',
+      immediate: true
     }
   },
   mounted () {
     this.routes = this.$router.options.routes
-    this.updateDefaultKeys()
   },
   methods: {
     updateDefaultKeys () {
