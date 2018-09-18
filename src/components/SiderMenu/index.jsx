@@ -8,11 +8,11 @@ export default {
   props,
   data: () => ({
     selectedKeys: [],
-    routes: []
+    routes: [],
+    collapsed: false
   }),
   computed: {
     user: () => {},
-    collapsed: () => false
   },
   watch: {
     $route: {
@@ -22,6 +22,10 @@ export default {
   },
   mounted () {
     this.routes = this.$router.options.routes
+
+    this.$proBus.$on('GlobalHeaderCollapse', collapsed => {
+      this.collapsed = collapsed
+    })
   },
   methods: {
     updateDefaultKeys () {
@@ -43,12 +47,15 @@ export default {
       return (
         <a-menu-item key={route.name}>
           {this.createIcon(route)}
-          {route.meta.title}
+          {this.createTitle(route)}
         </a-menu-item>
       )
     },
     createIcon (route) {
       return route.meta.icon && <a-icon type={route.meta.icon} />
+    },
+    createTitle (route) {
+      return <span>{route.meta.title}</span>
     },
     createSubMenu (route) {
       const menuItems = route.children
@@ -60,7 +67,7 @@ export default {
         <a-sub-menu key={route.name}>
           <span slot="title">
             {icon}
-            {route.meta.title}
+            {this.createTitle(route)}
           </span>
           {menuItems}
         </a-sub-menu>
@@ -74,7 +81,7 @@ export default {
       <a-layout-sider
         trigger={null}
         width={this.width}
-        v-model={this.collapsed}
+        collapsed={this.collapsed}
         class="sider"
         collapsible>
         <Logo {...p(this.logo)} />

@@ -1,6 +1,6 @@
 import Vue from 'vue'
 
-Vue.$proBus = new Vue()
+Vue.prototype.$proBus = new Vue()
 
 export { default as GlobalHeader } from './GlobalHeader'
 export { default as Copyright } from './Copyright'

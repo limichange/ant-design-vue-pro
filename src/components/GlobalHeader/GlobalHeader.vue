@@ -29,14 +29,9 @@
 <script>
 export default {
   name: 'GlobalHeader',
-  props: {
-    collapsed: {
-      type: Boolean,
-      default: false
-    }
-  },
   data () {
     return {
+      collapsed: false,
       userInfo: {
         userName: '用户名称'
       }
@@ -44,8 +39,9 @@ export default {
   },
   methods: {
     toggleSideBar () {
-      this.$emit('collapse', !this.collapsed)
-      this.triggerResizeEvent()
+      this.collapsed = !this.collapsed
+      this.$emit('collapse', this.collapsed)
+      this.$proBus.$emit('GlobalHeaderCollapse', this.collapsed)
     },
     triggerResizeEvent () {},
     logout () {
