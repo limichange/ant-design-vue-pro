@@ -34,11 +34,34 @@ export default {
       this.$router.push({ name: item.key })
     },
     createMenuItems () {
-      this.routes.map(route => {
-        console.log(route)
-      })
+      return this.routes
+        .filter(route => !route.hidden)
+        .map(route => {
+          return route.children.length === 1
+            ? this.createMenuItem(route.children[0])
+            : this.createSubMenu(route)
+        })
+    },
+    createMenuItem (route) {
+      return (
+        <a-menu-item key={route.name}>
+          <a-icon type={route.meta.icon} />
+          <span>{route.meta.title}</span>
+        </a-menu-item>
+      )
+    },
+    createSubMenu (route) {
+      const menuItems = route.children.map(this.createMenuItem)
 
-      return <a-menu-item>name2</a-menu-item>
+      return (
+        <a-sub-menu key={route.name}>
+          <span slot="title">
+            <a-icon type={route.meta.icon} />
+            <span>{route.meta.title}</span>
+          </span>
+          { menuItems}
+        </a-sub-menu>
+      )
     }
   },
   render () {
@@ -53,7 +76,7 @@ export default {
         collapsible>
         <Logo {...p(this.logo)} />
         <a-menu
-          // selectedKeys={this.selectedKeys}
+          selectedKeys={this.selectedKeys}
           theme="dark"
           mode="inline"
           onClick={this.select}>
@@ -63,39 +86,3 @@ export default {
     )
   }
 }
-/* <template>
-      <template
-        v-for="route in routes"
-        v-if="!route.hidden">
-
-        <a-menu-item
-          :key="route.children[0].name"
-          v-if="route.onePage">
-          <a-icon :type="route.children[0].meta.icon" />
-          <span>{{ route.children[0].meta.name }}</span>
-        </a-menu-item>
-
-        <a-menu-item
-          v-else-if="!route.children"
-          :key="route.name">
-          <a-icon :type="route.meta.icon" />
-          <span>{{ route.meta.name }}</span>
-        </a-menu-item>
-
-        <a-sub-menu
-          v-else-if="!route.hidden"
-          :key="route.name">
-          <span slot="title">
-            <a-icon :type="route.meta.icon" />
-            <span>{{ route.meta.name }}</span>
-          </span>
-          <a-menu-item
-            v-if="!routeChildren.hidden"
-            v-for="routeChildren in route.children"
-            :key="routeChildren.name">
-            {{ routeChildren.meta.name }}
-          </a-menu-item>
-        </a-sub-menu>
-      </template>
-
-</template> */
