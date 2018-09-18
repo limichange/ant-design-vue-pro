@@ -54,7 +54,9 @@ export default {
       return route.meta.icon && <a-icon type={route.meta.icon} />
     },
     createSubMenu (route) {
-      const menuItems = route.children.map(this.createMenuItem)
+      const menuItems = route.children
+        .filter(route => !route.hidden)
+        .map(this.createMenuItem)
       const icon = this.createIcon(route)
 
       return (
