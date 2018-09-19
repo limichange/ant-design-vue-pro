@@ -34,7 +34,7 @@ export default {
     },
     createMenuItems () {
       return this.routes
-        .filter(route => !route.hidden)
+        .filter(this.isHidden)
         .map(route => {
           return route.children.length === 1
             ? this.createMenuItem(route.children[0])
@@ -55,9 +55,12 @@ export default {
     createTitle (route) {
       return <span>{route.meta.title}</span>
     },
+    isHidden (item) {
+      return !item.hidden
+    },
     createSubMenu (route) {
       const menuItems = route.children
-        .filter(route => !route.hidden)
+        .filter(this.isHidden)
         .map(this.createMenuItem)
       const icon = this.createIcon(route)
 
