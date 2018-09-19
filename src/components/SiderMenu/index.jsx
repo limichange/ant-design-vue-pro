@@ -9,11 +9,9 @@ export default {
   data: () => ({
     selectedKeys: [],
     routes: [],
-    collapsed: false
+    collapsed: false,
+    user: () => { }
   }),
-  computed: {
-    user: () => {},
-  },
   watch: {
     $route: {
       handler: 'updateDefaultKeys',
