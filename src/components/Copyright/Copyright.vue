@@ -5,18 +5,31 @@ export default {
   name: 'Copyright',
   props: {
     companyName: VueTypes.string.def(''),
-    productName: VueTypes.string.def('')
+    productName: VueTypes.string.def(''),
+    copyrightIcon: VueTypes.boolean.def(true)
+  },
+  methods: {
+    createCopyrightIcon () {
+      if (this.copyrightIcon) {
+        return (
+          <span>
+            <i
+              style="margin: 0 5px;"
+              class="anticon anticon-copyright" />
+            { new Date().getFullYear() }
+            版权所有
+          </span>
+        )
+      }
+    }
   },
   render () {
     return (
       <div class={this.$style.Copyright}>
         { this.companyName }
-        <i
-          style="margin: 0 5px;"
-          class="anticon anticon-copyright" />
-        { new Date().getFullYear() }
-        版权所有
+        { this.createCopyrightIcon() }
         { this.productName }
+        <slot />
       </div>
     )
   }
