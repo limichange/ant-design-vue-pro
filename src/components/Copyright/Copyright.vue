@@ -6,7 +6,7 @@ export default {
   props: {
     companyName: VueTypes.string.def(''),
     productName: VueTypes.string.def(''),
-    copyrightIcon: VueTypes.boolean.def(true)
+    copyrightIcon: VueTypes.bool.def(true)
   },
   methods: {
     createCopyrightIcon () {
