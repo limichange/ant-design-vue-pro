@@ -1,6 +1,6 @@
 {
   "name": "ant-design-vue-pro",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "main": "src/components/index.js",
   "scripts": {
     "dev": "vue-cli-service build --target lib --name ant-design-vue-pro src/components/index.js",
